@@ -1,0 +1,187 @@
+{
+  "project_name": "ProjectPulse AI - Student Final Year AI Project Ideator & Roadmap Platform",
+  "persona_and_vibe": {
+    "archetype": "The Performance Pro + Swiss High-Contrast Developer Precision",
+    "tone": "Empowering, sharp, structured, hyper-focused, AI-native editorial clarity",
+    "design_philosophy": "Fusion over imitation. Blend high-density developer tools with clean editorial typography, subtle micro-border animations, and interactive milestone roadmaps. Zero fluff, maximum clarity."
+  },
+  "theme_strategy": {
+    "default_mode": "dark",
+    "supports_toggle": true,
+    "dark_mode_palette": {
+      "bg_primary": "#0B0F17",
+      "bg_secondary": "#111827",
+      "bg_card": "rgba(17, 24, 39, 0.75)",
+      "bg_card_border": "rgba(255, 255, 255, 0.08)",
+      "text_primary": "#F9FAFB",
+      "text_secondary": "#9CA3AF",
+      "text_muted": "#6B7280",
+      "accent_primary": "#3B82F6",
+      "accent_emerald": "#10B981",
+      "accent_amber": "#F59E0B",
+      "accent_purple": "#8B5CF6",
+      "danger": "#EF4444"
+    },
+    "light_mode_palette": {
+      "bg_primary": "#F8FAFC",
+      "bg_secondary": "#FFFFFF",
+      "bg_card": "#FFFFFF",
+      "bg_card_border": "rgba(15, 23, 42, 0.08)",
+      "text_primary": "#0F172A",
+      "text_secondary": "#475569",
+      "text_muted": "#94A3B8",
+      "accent_primary": "#2563EB",
+      "accent_emerald": "#059669",
+      "accent_amber": "#D97706",
+      "accent_purple": "#7C3AED",
+      "danger": "#DC2626"
+    },
+    "forbidden_colors": ["#7351B7", "#1B93A4"]
+  },
+  "typography": {
+    "heading_font_family": "'Plus Jakarta Sans', 'Outfit', system-ui, -apple-system, sans-serif",
+    "body_font_family": "'DM Sans', 'Inter', system-ui, sans-serif",
+    "code_font_family": "'JetBrains Mono', 'Fira Code', monospace",
+    "rules": {
+      "anti_default": "DO NOT use Inter or Arial for main H1/H2 headings. Use Plus Jakarta Sans / Outfit for display text.",
+      "heading_h1": "text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight",
+      "heading_h2": "text-2xl sm:text-3xl font-bold tracking-tight",
+      "heading_h3": "text-xl sm:text-2xl font-semibold tracking-normal",
+      "body_text": "text-sm sm:text-base leading-relaxed",
+      "caption": "text-xs tracking-wider uppercase font-medium text-muted-foreground",
+      "tight_tracking": "Always apply tracking-tight to headings above 28px"
+    }
+  },
+  "spacing_and_layout": {
+    "container_padding": "px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto",
+    "card_padding": "p-5 sm:p-6 lg:p-8",
+    "section_gap": "space-y-12 sm:space-y-16",
+    "grid_bento": "grid grid-cols-1 md:grid-cols-12 gap-6",
+    "mobile_first": "Always start grid-cols-1 on mobile and scale to md:grid-cols-2 or lg:grid-cols-12",
+    "border_padding_rule": "Containers with borders MUST have internal padding p-6 or p-8 to prevent text collision."
+  },
+  "components_and_features": {
+    "splash_welcome_page": {
+      "duration_seconds": 5,
+      "features": "5-second auto-transition to Home, visual progress bar, skip button, animated AI glowing emblem, tagline 'Transforming Tech Interests into Impactful Capstones'."
+    },
+    "navigation_header": {
+      "type": "Sticky Glassmorphism Navbar",
+      "classes": "sticky top-0 z-50 backdrop-blur-xl bg-background/80 border-b border-border/50 px-4 py-3",
+      "elements": [
+        "Brand Logo + Title (ProjectPulse AI)",
+        "Nav links: Dashboard/Home, Idea Generator, Public Implementations, Roadmap & Milestones, Mentorship",
+        "Student Profile badge with current user name and avatar",
+        "Dark/Light Theme Toggle Switch",
+        "Auth Buttons (Login / Register / Logout)"
+      ]
+    },
+    "home_page_student_profile": {
+      "layout": "Bento Grid Dashboard Header",
+      "sections": [
+        "Welcome Banner with Student Name, Major, Expected Graduation, and Capstone Status",
+        "Daily Activities & Learning Metrics Widget (streak count, hours logged, github commits synced, skills matrix)",
+        "Call to Action: 'Generate New Project Idea' button vs 'Continue Current Roadmap'",
+        "Community Project Feed: Showcases real or inspirational projects completed by other senior students with filters (Domain, Tech Stack, Likes, GitHub links)"
+      ]
+    },
+    "ai_generator_multistep_form": {
+      "steps": [
+        {
+          "step_number": 1,
+          "title": "Interests & Domain Preferences",
+          "fields": ["Core Domains (AI/ML, Web3, Cloud & DevOps, IoT, Mobile, HealthTech)", "Personal Interests / Real-world problems eager to solve"]
+        },
+        {
+          "step_number": 2,
+          "title": "Existing Skills & Proficiency",
+          "fields": ["Programming Languages", "Frameworks & Tools", "Skill level (Beginner, Intermediate, Advanced)"]
+        },
+        {
+          "step_number": 3,
+          "title": "Project Constraints",
+          "fields": ["Time Duration (3 months, 6 months, 1 year)", "Team Size (Solo, 2-3 members, 4+ members)", "Hardware / Cloud Budget Constraints"]
+        }
+      ],
+      "validation": "Form fields must have validation (zod / react-hook-form) with active feedback, accessible field messages, and step progress indicator."
+    },
+    "ai_generated_idea_cards": {
+      "quantity": 3,
+      "card_elements": [
+        "Title & Elevator Pitch",
+        "Match Score (% based on skills & interests)",
+        "Difficulty Badge (Easy, Moderate, Advanced)",
+        "Key Highlight / Why It Fits Student Profile",
+        "Domain & Tech Tags",
+        "CTA: 'Select & Generate Full Roadmap'"
+      ]
+    },
+    "project_detail_view": {
+      "sections": [
+        "Hero Banner with Title, Problem Statement, and Architecture Overview",
+        "Core Features Breakdown (4-6 actionable features)",
+        "Recommended Tech Stack Matrix (Matched directly to student's known skills + 1 learnable stretch tech)",
+        "Phased Development Roadmap (Phase 1: Architecture & Data, Phase 2: MVP Core, Phase 3: Integration & AI, Phase 4: Testing & Deployment)",
+        "2-3 Concrete Differentiation / Improvement Ideas (How to make it publishable/commercialized)"
+      ]
+    },
+    "milestone_tracking_dashboard": {
+      "features": [
+        "Interactive progress meter (% complete)",
+        "Phase-by-Phase Checklist with status toggles (Not Started, In Progress, Completed)",
+        "Automated Progress Report Generator (Generates PDF/Markdown summary for faculty guide submission)",
+        "Log Activity button to record weekly progress"
+      ]
+    },
+    "ai_chatbot_widget": {
+      "type": "Floating Interactive Assistant Widget",
+      "features": [
+        "Floating launcher icon in bottom-right (z-50)",
+        "Quick prompt chips ('How do I write project proposal?', 'Explain system architecture', 'Suggest datasets for my topic')",
+        "Live conversation chat window with AI response stream simulation",
+        "Context aware (knows current selected project and student skills)"
+      ]
+    }
+  },
+  "media_assets": {
+    "images": [
+      {
+        "category": "hero_student_collaborating",
+        "url": "https://images.unsplash.com/photo-1758270705172-07b53627dfcb?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1MDZ8MHwxfHNlYXJjaHwyfHx1bml2ZXJzaXR5JTIwc3R1ZGVudCUyMGNvZGluZyUyMGxhcHRvcCUyMG1vZGVybiUyMGNhbXB1c3xlbnwwfHx8fDE3ODg1ODc1Mzh8MA&ixlib=rb-4.1.0&q=85",
+        "description": "Group of university students collaborating around a laptop in a modern study hall"
+      },
+      {
+        "category": "developer_workspace",
+        "url": "https://images.unsplash.com/photo-1719400471588-575b23e27bd7?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1OTV8MHwxfHNlYXJjaHwxfHxkZXZlbG9wZXIlMjBjb2RpbmclMjBkYXJrJTIwc2NyZWVuJTIwdGVjaHxlbnwwfHx8fDE3ODg1ODc1NDV8MA&ixlib=rb-4.1.0&q=85",
+        "description": "Developer setup with modern dark coding environment"
+      },
+      {
+        "category": "code_editor_focus",
+        "url": "https://images.unsplash.com/photo-1753998943228-73470750c597?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1OTV8MHwxfHNlYXJjaHwzfHxkZXZlbG9wZXIlMjBjb2RpbmclMjBkYXJrJTIwc2NyZWVuJTIwdGVjaHxlbnwwfHx8fDE3ODg1ODc1NDV8MA&ixlib=rb-4.1.0&q=85",
+        "description": "Code display screen with clean IDE layout"
+      }
+    ]
+  },
+  "motion_and_microinteractions": {
+    "library": "framer-motion",
+    "rules": [
+      "Hover states on interactive cards: transition-transform duration-200 hover:-translate-y-1 hover:shadow-lg",
+      "Entrance animations: Fade-in and subtle slide-up (y: 10 to y: 0, opacity: 0 to 1)",
+      "Respect prefers-reduced-motion for all scroll and entrance animations",
+      "No universal transition: all in CSS. Use explicit transitions like transition-colors or transition-transform"
+    ]
+  },
+  "testing_and_accessibility": {
+    "data_testid_convention": "All interactive elements (buttons, inputs, modal triggers, card CTAs, tab triggers) MUST include descriptive data-testid attributes in kebab-case format. E.g., data-testid='generate-ideas-btn', data-testid='milestone-check-1', data-testid='theme-toggle-button'.",
+    "contrast_standards": "Ensure WCAG AA contrast for text elements. Subtitles over backgrounds must use semi-solid backing or contrast text-shadow where appropriate.",
+    "keyboard_navigation": "Focus rings must be clearly visible on buttons and form elements on tab focus."
+  },
+  "instructions_to_main_agent": [
+    "Follow the React JavaScript structure (.js files) as present in the repo.",
+    "Use Lucide React icons for UI iconography.",
+    "Implement JWT-based mock/real authentication state so students can switch profiles or login.",
+    "Ensure the splash screen auto-navigates to Home after 5 seconds but includes a clear 'Skip to App' button.",
+    "Provide seed student ideas in the public feed initially so the page feels rich and inhabited.",
+    "Make the AI chatbot widget interactive with preset sample queries and AI response streaming animations."
+  ]
+}
